@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+preview.png
+drawing.gcode
+calibration.json
