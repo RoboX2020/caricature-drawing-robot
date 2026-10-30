@@ -1,3 +1,8 @@
+# ============================================================================
+# test_dobot.py - hardware sanity check: connect to the arm and move it a
+# little, to prove the USB link and pydobotplus driver work before a real
+# drawing. Run this first when the robot misbehaves.
+# ============================================================================
 from pydobotplus import Dobot
 from serial.tools import list_ports
 import time

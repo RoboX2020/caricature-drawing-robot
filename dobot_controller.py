@@ -1,3 +1,5 @@
+# PLAIN ENGLISH: the robot arm's remote control - connect, move, pen up/down,
+# and draw a list of strokes.
 """
 Dobot Magician Lite controller — connection, movement, pen control, and drawing.
 """

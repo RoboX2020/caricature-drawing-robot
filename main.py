@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# PLAIN ENGLISH: the whole pipeline in one file - photo -> line art ->
+# robot draws it with a pen (Dobot Magician Lite version of this project).
 """
 Caricature Drawing Robot — Terminal Interface
 Dobot Magician Lite controller for drawing line-art from photos.

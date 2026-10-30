@@ -1,3 +1,4 @@
+# PLAIN ENGLISH: turns a photo into clean line-art strokes the arm can draw.
 """
 Image processor — converts a photo into drawable line-art paths.
 

@@ -1,3 +1,5 @@
+# PLAIN ENGLISH: remembers where the paper is - saved corner positions and
+# pen heights from calibration, so they survive restarts.
 """
 Calibration configuration — save/load paper corners, Z heights, and port settings.
 """

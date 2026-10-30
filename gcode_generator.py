@@ -1,3 +1,5 @@
+# PLAIN ENGLISH: saves the drawing as G-code (the standard machine-motion
+# language) so it can be inspected or replayed without the AI step.
 """
 G-code generator — converts drawing paths to G-code for saving/inspection.
 Also supports loading G-code back into paths.
