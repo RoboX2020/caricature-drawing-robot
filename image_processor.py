@@ -10,6 +10,9 @@ import numpy as np
 import os
 
 
+# # The photo-to-strokes pipeline: shrink the photo, find edges (outlines),
+# # trace them into continuous paths, then simplify - fewer points means a
+# # faster, smoother drawing. detail_level sets how much outline survives.
 def load_and_process_image(image_path, max_size=800, detail_level=3):
     """
     Load a photo and convert it to a list of drawable paths (in pixel coordinates).
@@ -104,6 +107,8 @@ def load_and_process_image(image_path, max_size=800, detail_level=3):
     return paths, w, h, edges
 
 
+# # Convert pixel positions into the robot arm's real-world coordinates,
+# # scaled to fit the physical drawing area (corner1 to corner2).
 def map_paths_to_dobot(paths, img_w, img_h, corner1, corner2):
     """
     Map pixel-coordinate paths to Dobot workspace coordinates.
@@ -158,6 +163,8 @@ def map_paths_to_dobot(paths, img_w, img_h, corner1, corner2):
     return mapped_paths
 
 
+# # Draw the planned strokes on screen (or to a file) so you can check the
+# # drawing before the robot starts moving.
 def preview_paths(paths, img_w, img_h, edge_image=None, save_path=None):
     """
     Render the paths as a matplotlib figure for visual preview.
@@ -202,6 +209,8 @@ def preview_paths(paths, img_w, img_h, edge_image=None, save_path=None):
     return save_path
 
 
+# # Reorder strokes so the pen travels less between them (nearest first),
+# # which makes the whole drawing faster.
 def _optimize_path_order(paths):
     """
     Reorder paths using nearest-neighbor heuristic to minimize pen-up travel.

@@ -7,6 +7,8 @@ import time
 from pydobotplus import Dobot
 
 
+# # Talks to the Dobot arm: connect, move to points, pen up/down, and run a
+# # whole drawing (with pauses so you can watch it work).
 class DobotController:
     def __init__(self):
         self.device = None

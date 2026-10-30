@@ -8,6 +8,8 @@ import os
 from datetime import datetime
 
 
+# # Turn strokes into G-code: pen up and travel to each stroke's start, pen
+# # down, trace the points, pen up. G0 = fast travel move, G1 = drawing move.
 def paths_to_gcode(paths, z_draw, z_travel, draw_speed=30, travel_speed=100,
                    corner1=None, corner2=None):
     """
@@ -69,6 +71,7 @@ def paths_to_gcode(paths, z_draw, z_travel, draw_speed=30, travel_speed=100,
     return "\n".join(lines)
 
 
+# # Write the G-code to a timestamped file.
 def save_gcode(gcode_str, filepath=None):
     """Save G-code string to file."""
     if filepath is None:
@@ -79,6 +82,7 @@ def save_gcode(gcode_str, filepath=None):
     return filepath
 
 
+# # Read G-code back into strokes, so a saved drawing can be re-drawn.
 def load_gcode(filepath):
     """
     Load G-code from file and convert back to paths.
@@ -146,6 +150,7 @@ def load_gcode(filepath):
     return paths, z_draw, z_travel
 
 
+# # Pull the X/Y/Z numbers out of one G-code line.
 def _parse_gcode_params(line):
     """Parse G-code line into parameter dict. e.g. 'G1 X10 Y20 Z5 F100' → {'X':10, 'Y':20, 'Z':5, 'F':100}"""
     params = {}
